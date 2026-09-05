@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+module.exports = (req, res) => {
     const quotes = [
         "First, solve the problem. Then, write the code. - John Johnson",
         "Computers are good at following instructions, but not at reading your mind. - Donald Knuth",
@@ -12,6 +12,6 @@ export default function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'application/json');
 
-    // Return the response code and the stringified data
+    // Return the response code and data using Vercel's helper methods
     return res.status(200).json({ quote: randomQuote });
-}
+};
